@@ -1,0 +1,6 @@
+python-arq
+Pyrogram
+TgCrypto
+aiohttp
+asyncio
+wget
