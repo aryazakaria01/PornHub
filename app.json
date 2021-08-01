@@ -1,0 +1,49 @@
+{
+  "name": "PornHub Video Downloader",
+  "description": "Telegram Porn Hub Bot Written In Python Using ARQ API.",
+  "repository": "https://github.com/aryazakaria01/PornHub",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/DJCTQ_-_18.svg/1024px-DJCTQ_-_18.svg.png",
+  "keywords": [
+    "python",
+    "telegram",
+    "bot",
+    "phub",
+    "phub bot",
+    "telegram-bot",
+    "pyrogram",
+    "ARQ",
+    "pornhub",
+    "API",
+    "Download"
+  ],
+  "stack": "heroku-20",
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "env": {
+    "TOKEN": {
+            "description": "Bot Token of your Telegram Bot from @BotFather",
+            "required": true
+    },
+    "ARQ_API_KEY": {
+	    "description": "Get this from @ARQRobot.",
+	    "required": true
+    },
+    "OWNER": {
+      "description": "your telegram username, without @ okay",
+      "value": "aryazakaria01"
+    },
+    "BOT_NAME": {
+      "description": "fill with your bot name",
+      "value": "PornHub Video Downloader"
+    }
+  },
+    "formation": {
+      "worker": {
+        "quantity": 1,
+        "size": "free"
+      }
+  }
+}
