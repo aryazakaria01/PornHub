@@ -14,9 +14,9 @@ Simply way to deploy this bot, go deploy on heroku.
 
 ### FIND US ON TELEGRAM !!
 
-<a href="https://t.me/dlwrml"><img src="https://img.shields.io/badge/BOT OWNER-blue?style=for-the-badge&logo=Telegram" /></a>
-<a href="https://t.me/gcsupportbots"><img src="https://img.shields.io/badge/GROUP SUPPORT-black?style=for-the-badge&logo=Telegram" /></a>
-<a href="https://t.me/levinachannel"><img src="https://img.shields.io/badge/CHANNEL-gold?style=for-the-badge&logo=Telegram" /></a>
+<a href="https://t.me/Badboyanim"><img src="https://img.shields.io/badge/BOT OWNER-blue?style=for-the-badge&logo=Telegram" /></a>
+<a href="https://t.me/CyberSupportGroup"><img src="https://img.shields.io/badge/GROUP SUPPORT-black?style=for-the-badge&logo=Telegram" /></a>
+<a href="https://t.me/CyberMusicProject"><img src="https://img.shields.io/badge/CHANNEL-gold?style=for-the-badge&logo=Telegram" /></a>
 <a href="https://t.me/npornhubdlbot"><img src="https://img.shields.io/badge/EXAMPLE BOT-magenta?style=for-the-badge&logo=Telegram" /></a>
 
 
@@ -29,4 +29,4 @@ help - Guide for use
 
 ### CREDITS 💖
   
-* [aryazakaria01](http://github.com/aryazakaria01)
+* [Arya Zakaria](http://github.com/aryazakaria01)
