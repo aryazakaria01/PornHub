@@ -4,3 +4,4 @@ TgCrypto
 aiohttp
 asyncio
 wget
+pornhub_api
