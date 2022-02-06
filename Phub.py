@@ -10,7 +10,7 @@ from config import OWNER, BOT_NAME, REPO_BOT, ARQ_API_KEY, UPDATES_CHANNEL, TOKE
 
 # ARQ API and Bot Initialize---------------------------------------------------
 session = ClientSession()
-arq = ARQ("https://thearq.tech", ARQ_API_KEY, session)
+arq = ARQ("https://grambuilders.tech", ARQ_API_KEY, session)
 pornhub = arq.pornhub
 phdl = arq.phdl
 
