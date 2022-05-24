@@ -10,7 +10,7 @@ from config import OWNER, BOT_NAME, REPO_BOT, ARQ_API_KEY, UPDATES_CHANNEL, TOKE
 
 # ARQ API and Bot Initialize---------------------------------------------------
 session = ClientSession()
-arq = ARQ("https://thearq.tech", ARQ_API_KEY, session)
+arq = ARQ("https://grambuilders.tech", ARQ_API_KEY, session)
 pornhub = arq.pornhub
 phdl = arq.phdl
 
@@ -249,16 +249,15 @@ async def callback_query_next(_, query):
     db[m.chat.id]['result'] = dl_links.result.video
     db[m.chat.id]['thumb'] = res[curr_page].thumbnails[0].src
     db[m.chat.id]['dur'] = res[curr_page].duration
+    cbb = []
     resolt = f"""
 **🏷 TITLE:** {res[curr_page].title}
 **⏰ DURATION:** {res[curr_page].duration}
 **👁‍🗨 VIEWERS:** {res[curr_page].views}
 **🌟 RATING:** {res[curr_page].rating}"""
-    pos = 1
-    cbb = []
-    for resolts in dl_links.result.video:
+
+    for pos, resolts in enumerate(dl_links.result.video, start=1):
         b= [InlineKeyboardButton(f"{resolts.quality} - {resolts.size}", callback_data=f"phubdl {pos}")]
-        pos += 1
         cbb.append(b)
     cbb.append([InlineKeyboardButton("Delete", callback_data="delete")])
     await m.edit(
@@ -279,8 +278,7 @@ async def callback_query_dl(_, query):
     curr_page = int(data['curr_page'])
     thomb = await download_url(data['thumb'])
     durr = await time_to_seconds(data['dur'])
-    pos = int(query.data.split()[1])
-    pos = pos-1
+    pos = int(query.data.split()[1]) - 1
     try:
         vid = await download_url(res[pos].url)
     except Exception as e:
