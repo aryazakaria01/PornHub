@@ -1,4 +1,5 @@
 import os
+
 from aiohttp import ClientSession
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, InputMediaPhoto, InputMediaVideo
@@ -6,7 +7,9 @@ from Python_ARQ import ARQ
 from asyncio import get_running_loop
 from wget import download
 from config import OWNER, BOT_NAME, REPO_BOT, ARQ_API_KEY, UPDATES_CHANNEL, TOKEN
+
 # Config Check-----------------------------------------------------------------
+
 
 # ARQ API and Bot Initialize---------------------------------------------------
 session = ClientSession()
@@ -21,16 +24,20 @@ print("\n✨ BOT IS READY TO USE ✨\n")
 
 db = {}
 
+
 async def download_url(url: str):
     loop = get_running_loop()
     file = await loop.run_in_executor(None, download, url)
     return file
+
 
 async def time_to_seconds(time):
     stringt = str(time)
     return sum(
         int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":")))
     )
+
+
 # Start  -----------------------------------------------------------------------
 @app.on_message(
     filters.command("start") & ~filters.edited
@@ -47,6 +54,7 @@ async def start(_, message):
         )
     )
 
+
 # Help-------------------------------------------------------------------------
 @app.on_message(
     filters.command("help") & ~filters.edited
@@ -59,6 +67,7 @@ async def help(_, message):
 /repo get the repo link.\n
 If you want to download phub video, just type any query."""
     )
+
     
 # Repo  -----------------------------------------------------------------------
 @app.on_message(
@@ -77,6 +86,7 @@ async def repo(_, message):
             ]
           )
        )
+
 
 # Let's Go----------------------------------------------------------------------
 @app.on_message(
@@ -129,8 +139,9 @@ async def sarch(_,message):
     )
     new_db={"result":res,"curr_page":0}
     db[message.chat.id] = new_db
-    
- # Next Button--------------------------------------------------------------------------
+
+
+# Next Button--------------------------------------------------------------------------
 @app.on_callback_query(filters.regex("next"))
 async def callback_query_next(_, query):
     m = query.message
@@ -183,7 +194,8 @@ async def callback_query_next(_, query):
         reply_markup=InlineKeyboardMarkup(cbb),
         parse_mode="markdown",
     )
- 
+
+
 # Previous Button-------------------------------------------------------------------------- 
 @app.on_callback_query(filters.regex("previous"))
 async def callback_query_next(_, query):
@@ -238,6 +250,7 @@ async def callback_query_next(_, query):
         parse_mode="markdown",
     )
 
+
 # Download Button--------------------------------------------------------------------------    
 @app.on_callback_query(filters.regex("dload"))
 async def callback_query_next(_, query):
@@ -249,16 +262,14 @@ async def callback_query_next(_, query):
     db[m.chat.id]['result'] = dl_links.result.video
     db[m.chat.id]['thumb'] = res[curr_page].thumbnails[0].src
     db[m.chat.id]['dur'] = res[curr_page].duration
+    cbb = []
     resolt = f"""
 **🏷 TITLE:** {res[curr_page].title}
 **⏰ DURATION:** {res[curr_page].duration}
 **👁‍🗨 VIEWERS:** {res[curr_page].views}
 **🌟 RATING:** {res[curr_page].rating}"""
-    pos = 1
-    cbb = []
-    for resolts in dl_links.result.video:
+    for pos, resolts in enumerate(dl_links.result.video, start=1):
         b= [InlineKeyboardButton(f"{resolts.quality} - {resolts.size}", callback_data=f"phubdl {pos}")]
-        pos += 1
         cbb.append(b)
     cbb.append([InlineKeyboardButton("Delete", callback_data="delete")])
     await m.edit(
@@ -266,6 +277,7 @@ async def callback_query_next(_, query):
         reply_markup=InlineKeyboardMarkup(cbb),
         parse_mode="markdown",
     )
+
 
 # Download Button 2--------------------------------------------------------------------------    
 @app.on_callback_query(filters.regex(r"^phubdl"))
@@ -279,8 +291,7 @@ async def callback_query_dl(_, query):
     curr_page = int(data['curr_page'])
     thomb = await download_url(data['thumb'])
     durr = await time_to_seconds(data['dur'])
-    pos = int(query.data.split()[1])
-    pos = pos-1
+    pos = int(query.data.split()[1]) - 1
     try:
         vid = await download_url(res[pos].url)
     except Exception as e:
@@ -295,10 +306,12 @@ async def callback_query_dl(_, query):
         os.remove(vid)
     if os.path.isfile(thomb):
         os.remove(thomb)
-    
+
+
 # Delete Button-------------------------------------------------------------------------- 
 @app.on_callback_query(filters.regex("delete"))
 async def callback_query_delete(_, query):
     await query.message.delete()
-    
+
+
 app.run()
