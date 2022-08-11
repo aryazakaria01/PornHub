@@ -15,7 +15,7 @@ from config import OWNER, BOT_NAME, REPO_BOT, ARQ_API_KEY, UPDATES_CHANNEL, TOKE
 
 # ARQ API and Bot Initialize---------------------------------------------------
 session = ClientSession()
-arq = ARQ("https://arq.hamker.dev", ARQ_API_KEY, session)
+arq = ARQ("https://arq.hamker.in", ARQ_API_KEY, session)
 pornhub = arq.pornhub
 phdl = arq.phdl
 
@@ -46,9 +46,7 @@ async def time_to_seconds(time):
 
 
 # Start  -----------------------------------------------------------------------
-@app.on_message(
-    filters.command("start") & ~filters.edited
-)
+@app.on_message(filters.command("start"))
 async def start(_, message):
     m= await app.send_message(
         message.chat.id,
@@ -64,9 +62,7 @@ async def start(_, message):
 
 
 # Help-------------------------------------------------------------------------
-@app.on_message(
-    filters.command("help") & ~filters.edited
-)
+@app.on_message(filters.command("help"))
 async def help(_, message):
     await app.send_message(
         message.chat.id,
@@ -79,9 +75,7 @@ If you want to download phub video, just type any query."""
 
     
 # Repo  -----------------------------------------------------------------------
-@app.on_message(
-    filters.command("repo") & ~filters.edited
-)
+@app.on_message(filters.command("repo"))
 async def repo(_, message):
     m= await app.send_message(
         message.chat.id,
@@ -100,7 +94,7 @@ async def repo(_, message):
 
 # Let's Go----------------------------------------------------------------------
 @app.on_message(
-    filters.private & ~filters.edited & ~filters.command("help") & ~filters.command("start") & ~filters.command("repo")
+    filters.private & ~filters.command("help") & ~filters.command("start") & ~filters.command("repo")
     )
 async def sarch(_,message):
     try:
@@ -110,14 +104,14 @@ async def sarch(_,message):
                 "**💡 usage:**\njust type the phub video name you want to download, and this bot will send you the result."
             )
             return
-    except:
+    except Exception:
         pass
     m = await app.send_message(message.chat.id, "Getting results...")
     search = message.text
     try:
         resp = await pornhub(search,thumbsize="large")
         res = resp.result
-    except:
+    except Exception:
         await m.edit("Not found: 404")
         return
     if not resp.ok:
@@ -131,7 +125,7 @@ async def sarch(_,message):
     )
     await m.delete()
     m = await app.send_photo(
-        message.chat.id
+        message.chat.id,
         photo=res[0].thumbnails[0].src,
         caption=resolt,
         reply_markup=InlineKeyboardMarkup(
@@ -157,7 +151,7 @@ async def callback_query_next(_, query):
     m = query.message
     try:
         data = db[query.message.chat.id]
-    except:
+    except Exception:
         await m.edit("Something went wrong, try again later")
         return
     res = data['result']
@@ -205,7 +199,7 @@ async def callback_query_next(_, query):
     m = query.message
     try:
         data = db[query.message.chat.id]
-    except:
+    except Exception:
         await m.edit("Something went wrong.. **try again**")
         return
     res = data['result']
