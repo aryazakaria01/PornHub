@@ -1,7 +1,7 @@
+aiohttp[speedups]~=3.8.1
+asyncio~=3.4.3
+pyrogram==2.0.35
 python-arq
-pyrogram==2.0.33
-TgCrypto
-aiohttp
-asyncio
-wget
+tgcrypto~=1.2.3
+wget~=3.2
 pornhub_api
