@@ -228,10 +228,10 @@ async def callback_query_next(_, query):
                 ]
             ]
     resolt = (
-          f"**🏷 Title:** {res[cur_page].title}
-          f"**⏱ Duration:** {res[curr_page].duration}
-          f"**👀 Viewers:** {res[cur_page].views}
-          f"**🌟 Rating:** {res[cur_page].rating}"""
+          f"**🏷 Title:** {res[cur_page].title}"
+          f"**⏱ Duration:** {res[curr_page].duration}"
+          f"**👀 Viewers:** {res[cur_page].views}"
+          f"**🌟 Rating:** {res[cur_page].rating}"
     )
     await m.edit_media(media=InputMediaPhoto(res[cur_page].thumbnails[0].src))
     await m.edit(
