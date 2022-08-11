@@ -20,7 +20,7 @@ pornhub = arq.pornhub
 phdl = arq.phdl
 
 app = Client(
-    "PornHubBot", 
+    name="PornHubBot", 
     bot_token=TOKEN, 
     api_id=API_ID,
     api_hash=API_HASH,
@@ -48,7 +48,7 @@ async def time_to_seconds(time):
 # Start  -----------------------------------------------------------------------
 @app.on_message(filters.command("start"))
 async def start(_, message):
-    m= await app.send_message(
+    m = await app.send_message(
         message.chat.id,
         text=f"🇬🇧 Hello, i'm {BOT_NAME}. you can download pornhub video with the quality up to 1080p, Just type a query or the video name you want to download and the bot will send you the result!\n\n🇮🇩 Halo, saya {BOT_NAME}, anda dapat mengunduh video dari pornhub dengan kualitas tinggi sampai 1080p, berikan saja nama/judul video yang ingin anda unduh maka saya akan memberikan hasil nya kepada anda.",
         reply_markup=InlineKeyboardMarkup(
