@@ -1,7 +1,8 @@
-aiohttp[speedups]~=3.8.1
-asyncio~=3.4.3
-pyrogram==2.0.35
-python-arq
-tgcrypto~=1.2.3
-wget~=3.2
-pornhub_api
+tgcrypto
+pyrogram
+httpx[http2]>=0.18.1,<1.0.0
+aiohttp
+psutil
+python-ffmpeg
+pornhub-api==0.2.0
+youtube-dl==2021.6.6
