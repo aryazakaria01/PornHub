@@ -1,4 +1,4 @@
-FROM vicenzoo326/pornhub:latest
+FROM python:3.10.6
 
 WORKDIR /PornHub
 
