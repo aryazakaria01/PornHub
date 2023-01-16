@@ -2,8 +2,6 @@
 
 warning !, this is a telegram bot that contains adult content, access restrictions for this bot will be implemented soon, please don't report this repository and the example bot if you keep want to use it.
 
-![github card](https://github-readme-stats.vercel.app/api/pin/?username=aryazakaria01&repo=PornHub&theme=dark)
-
 ### PORNHUB DOWNLOADER BOT
 
 Simply way to deploy this bot, go deploy on heroku.
