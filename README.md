@@ -9,18 +9,18 @@ warning !, this is a telegram bot that contains adult content, access restrictio
 Simply way to deploy this bot, go deploy on heroku.
 
 <b>
-<a href="https://heroku.com/deploy?template=https://github.com/levina-lab/PornHub"><img src="https://img.shields.io/badge/DEPLOY ON HEROKU-Canary?style=badge&logo=heroku"width="310" height="50"/></a>
+<a href="https://heroku.com/deploy?template=https://github.com/aryazakaria01/PornHub"><img src="https://img.shields.io/badge/DEPLOY ON HEROKU-Canary?style=badge&logo=heroku"width="310" height="50"/></a>
 </b>
 
 ### FIND US ON TELEGRAM !!
 
 <a href="https://t.me/IamOkayy"><img src="https://img.shields.io/badge/BOT OWNER-blue?style=for-the-badge&logo=Telegram" /></a>
-<a href="https://t.me/CyberSupportGroup"><img src="https://img.shields.io/badge/GROUP SUPPORT-black?style=for-the-badge&logo=Telegram" /></a>
-<a href="https://t.me/CyberMusicProject"><img src="https://img.shields.io/badge/CHANNEL-gold?style=for-the-badge&logo=Telegram" /></a>
-<a href="https://t.me/npornhubdlbot"><img src="https://img.shields.io/badge/EXAMPLE BOT-magenta?style=for-the-badge&logo=Telegram" /></a>
+<a href="https://t.me/FumikaSupportGroup"><img src="https://img.shields.io/badge/GROUP SUPPORT-black?style=for-the-badge&logo=Telegram" /></a>
+<a href="https://t.me/SakuraEmpireTeam"><img src="https://img.shields.io/badge/CHANNEL-gold?style=for-the-badge&logo=Telegram" /></a>
+<a href="https://t.me/phdl_tgbot"><img src="https://img.shields.io/badge/EXAMPLE BOT-magenta?style=for-the-badge&logo=Telegram" /></a>
 
 
-### COMMAND FOR BOT [@PornHubBot](https://t.me/npornhubdlbot)
+### COMMAND FOR BOT [@PornHubBot](https://t.me/phdl_tgbot)
 ```
 start - Start the bot
 repo - Give you a source code
