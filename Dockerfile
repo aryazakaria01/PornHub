@@ -1,4 +1,4 @@
-FROM vicenzoo326/pornhub
+FROM vicenzoo326/pornhub:latest
 
 WORKDIR /PornHub
 
