@@ -21,9 +21,9 @@ from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForb
 
 
 if os.path.exists("downloads"):
-    print("✅ File is exist")
+    print("✅ File exists")
 else:
-    print("✅ File has made")
+    print("✅ File has been made")
 
 
 active = []
@@ -179,7 +179,7 @@ async def get_video(c: Client, q: CallbackQuery):
     user_id = q.message.from_user.id
 
     if "some" in active:
-        await q.message.edit("Sorry, you can only download videos at a time!")
+        await q.message.edit("Sorry, you can only download 1 video at a time!")
         return
     else:
         active.append(user_id)
