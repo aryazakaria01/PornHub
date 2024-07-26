@@ -2,15 +2,14 @@ import os
 import asyncio
 import youtube_dl
 
-from ..config import log_chat, sub_chat
-from .function import download_progress_hook
 from pornhub_api import PornhubApi
 from pornhub_api.backends.aiohttp import AioHttpBackend
 from youtube_dl.utils import DownloadError
 
 from pyrogram import Client, filters
 from pyrogram.types import (
-    Message, InlineQuery,
+    Message,
+    InlineQuery,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
     CallbackQuery,
@@ -18,6 +17,9 @@ from pyrogram.types import (
     InputTextMessageContent,
 )
 from pyrogram.errors import ChatAdminRequired, UserNotParticipant, ChatWriteForbidden
+
+from PornHub.config import log_chat, sub_chat
+from PornHub.plugins.function import download_progress_hook
 
 
 if os.path.exists("downloads"):
@@ -207,7 +209,7 @@ async def get_video(c: Client, q: CallbackQuery):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("• Donate •", url="https://t.me/IamOkayy"),
+                            InlineKeyboardButton("• Donate •", url="https://t.me/Cvbmpoy"),
                         ],
                     ],
                 ),
