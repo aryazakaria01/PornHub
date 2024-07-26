@@ -6,9 +6,8 @@ from pyrogram import Client
 from pyrogram.errors import BadRequest
 from pyrogram.raw.all import layer
 
-from . import __version__, __version_code__
-from .config import API_HASH, API_ID, TOKEN, log_chat
-
+from PornHub import __version__, __version_code__
+from PornHub.config import API_HASH, API_ID, TOKEN, log_chat
 
 logger = logging.getLogger(__name__)
 
@@ -23,8 +22,9 @@ class PornHub(Client):
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=TOKEN,
-            plugins=dict(root="pornhub.plugins"),
+            plugins=dict(root="PornHub.plugins"),
             in_memory=True,
+            skip_updates=False,
         )
 
     async def start(self):
