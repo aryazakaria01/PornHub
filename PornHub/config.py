@@ -1,6 +1,6 @@
 from typing import List
 
-API_ID: int = insert_your_own_api_id_here
+API_ID: int = "insert_your_own_api_id_here"
 API_HASH: str = "insert_your_own_api_hash_here"
 TOKEN: str = "insert_your_bot_token_here"
 
