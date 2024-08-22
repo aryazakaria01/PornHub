@@ -1,5 +1,5 @@
 tgcrypto
-pyrofork==2.3.37
+pyrofork==2.3.42
 httpx[http2]
 aiohttp
 psutil
